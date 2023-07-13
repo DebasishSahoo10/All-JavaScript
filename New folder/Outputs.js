@@ -135,10 +135,45 @@ promise.then(
 );
 /// output : done!
 
+/////////////////////////////////////////////////////////////////////////////////
+/// 12 : output will be nothing as we are not returning any error, if I change the last line to (.then) then it will console.log
+Promise.reject("Oops")
+  .catch((error) => error + "!")
+  .catch(console.error);
+/// output :
 
 /////////////////////////////////////////////////////////////////////////////////
-/// 12 : output will be nothing as we are not returning anything from the catch statement
-Promise.reject('Oops')
-.catch(error => error + '!')
-.catch(console.error);
-/// output : 
+/// 13 : mix of async and promise chaining
+async function asyncFunc() {
+  let response = await Promise.resolve("Hello");
+  console.log(response);
+  throw new Error("Oops");
+}
+asyncFunc().catch(console.error);
+/// output : Hello, Error : Oops
+
+/////////////////////////////////////////////////////////////////////////////////
+/// 14 : throw works like return
+async function asyncFunc() {
+  let response = await Promise.resolve('Hello');
+  throw new Error('Oops');
+  return 'World'; /// this code is unrechable
+}
+asyncFunc().catch(console.error);
+/// output : Error : Oops
+
+/////////////////////////////////////////////////////////////////////////////////
+/// 15
+function asyncFunc() {
+  return Promise.resolve('Hello').then(result => { throw new Error('Oops') });
+}
+asyncFunc().catch(console.error);
+/// output : Error : Oops
+
+/////////////////////////////////////////////////////////////////////////////////
+/// 16 : Async + IIFE + Await inside another function
+(async function() {
+  console.log(await Promise.resolve("Hello"));
+  return "World";
+})().then(console.log);
+/// output : Hello, World
