@@ -177,3 +177,19 @@ asyncFunc().catch(console.error);
   return "World";
 })().then(console.log);
 /// output : Hello, World
+
+/////////////////////////////////////////////////////////////////////////////////
+/// 17 : Only Throw throws an Error too
+const asynFunc =  new Promise((res, rej) => {
+  res("Finish")
+})
+asynFunc.then(() => {throw "Defeat"}).then(console.log).catch(console.log)
+/// Output : Defeat : Here in the Initial Promise we are resolving the Promise, but in the first (.then) we are not using it, instead we are throwing a string out of it, which is just an error, that is why it wil skip the second (.then) and directly will go to the (.catch)
+
+/////////////////////////////////////////////////////////////////////////////////
+/// 18 : Just Returning an Error object instead of Throwing will land us in (.then) and not in (.catch)
+const asynFunc2 =  new Promise((res, rej) => {
+  res("Finish")
+})
+asynFunc2.then(() => new Error("Defeat")).then(err => console.log("then :" + err)).catch(err => console.log("catch :" + err))
+/// Output : then : Error : Defeat
