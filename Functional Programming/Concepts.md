@@ -10,4 +10,6 @@
 
 Important : The return value of map() is an array of the same length as the original array. Even if we attach a condition to it and try to return a only few elements of an array, the map method will return undefined in place of those elements which didn't meet the condition.
 
-2. 
+2. What are the array methods that mutates the array?
+
+: (1) Push (2) Pop (3) Shift (4) Unshift (5) Splice (6) Reverse (7) Sort
