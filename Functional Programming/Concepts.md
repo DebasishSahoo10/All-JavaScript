@@ -13,3 +13,13 @@ Important : The return value of map() is an array of the same length as the orig
 2. What are the array methods that mutates the array?
 
 : (1) Push (2) Pop (3) Shift (4) Unshift (5) Splice (6) Reverse (7) Sort
+
+3. What is Functional Programming?
+
+: 
+
+4. What are Higher Order Functions?
+
+: A function that takes another function as an argument or returns another function out of it, is called a Higher Order Function. For example : Map Method for Array or Event Listeners.
+
+5. Why Functions are first class citizens in JS?
