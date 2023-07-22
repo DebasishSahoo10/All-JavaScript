@@ -16,10 +16,12 @@ Important : The return value of map() is an array of the same length as the orig
 
 3. What is Functional Programming?
 
-: 
+: Functional programming is a programming paradigm that treats logic process as the evaluation of functions and avoids changing state and mutable data. It emphasizes the use of pure functions, which produce the same output for the same input every time and have no side effects.
 
 4. What are Higher Order Functions?
 
 : A function that takes another function as an argument or returns another function out of it, is called a Higher Order Function. For example : Map Method for Array or Event Listeners.
 
 5. Why Functions are first class citizens in JS?
+
+: In functional programming, functions are first-class citizens, meaning they can be assigned to variables, passed as arguments to other functions, and returned as values from functions.
