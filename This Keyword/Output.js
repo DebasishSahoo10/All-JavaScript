@@ -149,3 +149,13 @@ const person2 = {
 const getName2 = person2.print();
 getName2(); // undefined
 // why : here function declration has its own THIS object, so when it is used in global scope, it has changed the THIS reference to the window object.
+
+// 14
+var myVar = 100;
+function WhoIsThis() {
+    var myVar = 200;
+    console.log(myVar); // 200
+    console.log(this.myVar); // undefined
+}
+WhoIsThis();
+// Why : 
