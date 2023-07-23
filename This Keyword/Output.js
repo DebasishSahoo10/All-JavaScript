@@ -123,3 +123,29 @@ const user8 = {
 const newUser = user8.print;
 console.log(newUser()); // undefined
 // why : because newUser is just refering to the function and not the whole object, so it will depend on the scope it is been invoked for all its reference, here it is window object
+
+// 12
+const person = {
+  firstName: "Mary",
+  print: function () {
+    return () => {
+      console.log(this.firstName);
+    };
+  },
+};
+const getName = person.print();
+getName(); // Mary
+// why : because arrow functions doesn't have THIS keyword, so even if it is acccesed in the global scope, it will not shift reference to window object. but if i make the inner function a function declaration, then :
+
+// 13
+const person2 = {
+  firstName: "Mary",
+  print: function () {
+    return function () {
+      console.log(this.firstName);
+    };
+  },
+};
+const getName2 = person2.print();
+getName2(); // undefined
+// why : here function declration has its own THIS object, so when it is used in global scope, it has changed the THIS reference to the window object.
