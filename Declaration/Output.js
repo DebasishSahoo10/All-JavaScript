@@ -26,3 +26,13 @@ console.log(myData) // {name : "c", hobby : "b"}
 
 myData = {name : "x", hobby : "y"} // will throw an error
 console.log(myData) // so this line will never run
+
+// 3
+var name = "Dev";
+(function () {
+  console.log("Name is :" + name)
+  var name = "Rev"
+  console.log("Name is :" + name)
+})() // Name is Undefined , Name is Rev
+// Why : if the function block have a variable reference in it somewhere, then it will be hoisted and any line in the function will have that hoisted undefined reference
+
