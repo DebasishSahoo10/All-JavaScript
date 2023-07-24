@@ -34,3 +34,22 @@ const otherObj = {
 };
 obj.greet.call(otherObj); // Jane
 // Why : here arrowFunc doesn't have its own THIS, hence it is taking the THIS reference from the parent function declaration. but if we call that function using call, then THIS reference will be changed.
+
+// 4
+function f() {
+  console.log(this);
+}
+let userAnon = {
+  g: f.bind(null),
+};
+userAnon.g(); // window object
+
+// 5 : expectd output = {#0 LION SHIMBA, #1 WHALE SHIRI}
+const animals = [{species : "LION", name : "SHIMBA"},{species : "WHALE", name : "SHIRI"}]
+function printAnimals (i) {
+  this.print = function () {
+    console.log("#" + i , this.species , this.name)
+  }
+  this.print()
+}
+animals.forEach((item, index) => printAnimals.call(item, index))

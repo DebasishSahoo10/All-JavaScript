@@ -155,7 +155,34 @@ var myVar = 100;
 function WhoIsThis() {
     var myVar = 200;
     console.log(myVar); // 200
-    console.log(this.myVar); // undefined
+    console.log(this.myVar); // 100
 }
 WhoIsThis();
-// Why : 
+// Sometime in some compilers the second output will be undefined but in the browser console it will be 100
+
+// 15 : Function declarations can access a normal declration of global scope but arrow function can not
+const name = "A"
+const test = {
+  name : "D",
+  getName () {
+    console.log(this.name)
+  }
+}
+const newFunc = test.getName
+newFunc() // A
+// 15.2
+window.name = "A"
+const test2 = {
+  name : "D",
+  getName : () => {
+    console.log(this.name)
+  }
+}
+test2.getName() // A
+
+// 16 : there is nothing called BIND CHAINING
+function any () {
+  console.log(this.name)
+}
+f = any.bind({name : "JOHN"}).bind({name : "JANE"})
+f() // JOHN
