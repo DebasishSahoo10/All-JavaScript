@@ -36,3 +36,11 @@ var name = "Dev";
 })() // Name is Undefined , Name is Rev
 // Why : if the function block have a variable reference in it somewhere, then it will be hoisted and any line in the function will have that hoisted undefined reference
 
+// 4
+const x = 12
+const testing = () => {
+  console.log(x)
+  var x = 10
+}
+testing() // undefined
+// why : because the function will take reference from its own scope first and the x variable is declared with var, so it is hoisted to the top of its scope.
