@@ -25,3 +25,50 @@ Important : The return value of map() is an array of the same length as the orig
 5. Why Functions are first class citizens in JS?
 
 : In functional programming, functions are first-class citizens, meaning they can be assigned to variables, passed as arguments to other functions, and returned as values from functions.
+
+6. Different type of functions
+
+(a) Function Statement aka Function Declaration : this is just how normally functions are declared with the FUNCTION keyword and a name.
+```js
+function funcOne () {
+    console.log("This is called")
+}
+```
+(b) Function Expression : when we assign a function to a variable
+```js
+const funcTwo = function () {
+    console.log("This is also called")
+}
+```
+(c) Named function Expression : when assigning a function to a variable, if we give that function also a name, then it will be called Named Function Expression.
+```js
+const funcThree = function func () {
+    console.log("This is called too")
+}
+// here to call the function we have to use "funcThree()" and not "func()"
+```
+(d) Anonymous Function : when function doesn't have a name, just like we put a arrow function in callbacks.
+
+
+7. Difference between Function expression and Function Declarations?
+
+: Function Declaration are hoisted but Function Expressions are not hoisted. and unlike variable hoisting these function declaration doesn't return undefine. Rather do everything that they intent to do.
+```js
+test() // 23
+testTwo() // Error
+function test () {
+  var a = 23
+  console.log(a)
+}
+const testTwo = function () {
+    var b = 24
+    console.log(b)
+}
+```
+
+8. Difference between Function Declarations vs Arrow Functions
+
+: (a) One being ovbiously Syntax
+(b) Implicit Return Keyword : Function declration has to take a return keyword if it is returning something, but an arrow function can work without one.
+(c) THIS Keyword : Arrow funtions doesn't have their own THIS keyword
+(d) Accessing Arguements without an Parameter : Normal Function Declaration can do that, but Arrow functions will give an error
