@@ -19,3 +19,8 @@
 (b) In JavaScript, variables declared with let and const are hoisted to the top of their block scope, similar to how variables declared with var are hoisted. However, unlike var variables, which are initialized with the value undefined during hoisting, variables declared with let and const remain uninitialized in the TDZ until their actual declaration is reached in the code.
 (c) Attempting to access a variable in the TDZ results in a ReferenceError. This is because the variable exists in the scope, but it has not been assigned a value yet.
 (d) The Temporal Dead Zone serves as a safeguard to catch potential errors caused by accessing variables before they are properly initialized. It encourages developers to declare variables at the top of their scope and helps prevent accidental use of uninitialized variables.
+(e) It is the place between Declaration and Initialisation
+
+4. What is Illegal Shadowing?
+
+(a) Redeclaring a variable that doesn't allow for re-declaring, is called illegal shadowing. 
