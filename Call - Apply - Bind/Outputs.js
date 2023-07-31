@@ -53,3 +53,64 @@ function printAnimals (i) {
   this.print()
 }
 animals.forEach((item, index) => printAnimals.call(item, index))
+
+// 6
+var person = {  
+  name: "James Smith",
+  hello: function(thing) {
+    console.log(this.name + " says hello " + thing);
+  }
+}
+var helloFunc = person.hello.bind({ name: "Jim Smith" });
+helloFunc("world"); // Jim Smith says hello world
+// Bind can take the arguments later also
+
+// 7
+function personContainer() {
+  var person = {  
+     name: "James Smith",
+     hello: function() {
+       console.log(this.name + " says hello " + arguments[1]);
+     }
+  }
+  person.hello.apply(person, arguments);
+}
+personContainer("world", "mars"); // James Smith says hello mars
+// arguments word does work here
+
+// 8
+function list(...args) {
+  return args;
+}
+function addArguments(arg1, arg2) {
+  return arg1 + arg2;
+}
+console.log(list(1, 2, 3)); // [1,2,3]
+console.log(addArguments(1, 2)); // 3
+const leadingThirtySevenList = list.bind(null, 37);
+const addThirtySeven = addArguments.bind(null, 37);
+console.log(leadingThirtySevenList()); // [37]
+console.log(leadingThirtySevenList(1, 2, 3)); // [37,1,2,3]
+console.log(addThirtySeven(5)); // 42
+console.log(addThirtySeven(1, 10, 12)); // 38
+
+// 9
+function add(num1, num2) {
+  return num1 + num2;
+}
+var addFive = add.bind(null, 5);
+console.log(addFive(10));  // 15
+
+// 10
+var x = 9;
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+var retrieveX = module.getX;
+console.log(retrieveX.bind({ x: 33 })());
+
+// 11
+let numArray = [1,3,4,5,6];
+console.log(Math.max(numArray)); // undefined : in turn this code will fail to do what we want, then how to fix it
+console.log(Math.max.apply(null, numArray)); // 5
