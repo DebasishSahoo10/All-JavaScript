@@ -1,0 +1,3 @@
+# Closures
+
+: Whenever we return a Function out of a function, then the returned function will have access to every variable that it needs to be executed properly. So even if the Parent function has been returned, this inner function of ours will always have all the reference it needs in the memory, because simply those variables are not garbage collected by the JS Engine. This concept is called Closures.
