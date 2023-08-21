@@ -18,6 +18,13 @@ const testFunc2 = () => {
 };
 testFunc2(); // 0,1,2
 // Let is block scoped, so for every loop iteration a new (i) has been declared, so every setTimeout will have reference to a different declaration
+// for (var i = 0; i < 3; i++) {
+//   ((i) => {
+//     setTimeout(() => {
+//       console.log(i)
+//     }, 1000)
+//   })(i)
+// } // this is how we can fix it with var and closures
 
 // 2 : Properties of objects can be declared but not the whole object
 const myData = {name : "a", hobby : "b"}
