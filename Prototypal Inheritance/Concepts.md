@@ -1,0 +1,4 @@
+# Prototypal Inheritence
+
+1. When we declare a data like a string, a function, an array, an object. All this gets attached automatically to a hidden object inside JavaScript. That hidden object has various of properties for different data types, which become available to every array, every function, every string, every object we declare. This way of attaching extra functionalities to a data type through an object is called Prototypal Inheritence.
+2. All these properties attached are called Prototypes for that particular data type. The object which gives them these properties is called __proto__/Prototype Object. Now in JS every Prototype Object also has its own Protypes, and that is called Prototype Chaining/
