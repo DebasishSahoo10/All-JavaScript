@@ -8,7 +8,7 @@
 
 : if the parents and childrens have some common areas, and on the parent and childrens have their respective event listeners and you clicked on the deeply nested children and then that click will bubble and every event from depply nested children to the top most parent, every event listener will be triggered. this way of event travelling from down to top elements is called Event Bubbling. 
 : Load, focus, blur, scroll these aren't bubbled.
-: Event.stopPropgation() is the code which stops the bubbling from happening
+: Event.stopPropogation() is the code which stops the bubbling from happening
 
 3. Event Capture : how to do it
 
