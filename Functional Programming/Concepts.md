@@ -72,3 +72,13 @@ const testTwo = function () {
 (b) Implicit Return Keyword : Function declration has to take a return keyword if it is returning something, but an arrow function can work without one.
 (c) THIS Keyword : Arrow funtions doesn't have their own THIS keyword
 (d) Accessing Arguements without an Parameter : Normal Function Declaration can do that, but Arrow functions will give an error
+
+9. One of the best use of REST and SPREAD
+
+```js
+const oneArr  = [1,2,3]
+const twoArr  = [4,5]
+oneArr.push(...twoArr)
+console.log(oneArr)
+console.log(Math.max(...oneArr))
+```

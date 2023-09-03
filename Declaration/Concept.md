@@ -23,4 +23,23 @@
 
 4. What is Illegal Shadowing?
 
-(a) Redeclaring a variable that doesn't allow for re-declaring, is called illegal shadowing. 
+(a) Redeclaring a variable that doesn't allow for re-declaring, is called illegal shadowing.
+
+5. Pass by Reference vs. Pass By Value
+
+(a) In JavaScript, primitive types (Boolean, null, undefined, String, and Number) are passed by value. This means that when these types are passed to a function, a copy of the original value is created, and the function receives and operates on this copy. Any changes made to this value within the function do not affect the original value.
+(b) Objects (including arrays and functions) in JavaScript are passed by reference. This means that when an object is passed to a function, the function receives a reference to the original object, not a new copy. If the function makes changes to the properties of the object, these changes will be reflected in the original object.
+```js
+const test = (a,b,c) => {
+  a = 4
+  b[0] = 3
+  c.first = false
+}
+
+const x = 5
+const y = [2, 6]
+const z = {first : true}
+test(x,y,z)
+console.log(x,y,z) // 5, [3,6], {first : false}
+```
+(c) Immutable Data Types vs Mutable Data Types : this is sub-conecpt of the above question and it is best described by JS Memory drawings
