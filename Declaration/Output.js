@@ -80,3 +80,9 @@ console.log(a2) // 42
 const array = [1, 2, 3, 4]
 array = array.push(55) // error
 // why : because array.push method returns the new length of the array. and we are assigning a new value to the contstant variable
+
+//8
+const array2 = [1, 2, 3, 4]
+array2 = array2
+console.log(array2) // Error
+// Why : once const is initialised it is initialised, whenever we try to re-assign something, it will throw an erro, no matter what, even if we are giving it itself as the new assignment
