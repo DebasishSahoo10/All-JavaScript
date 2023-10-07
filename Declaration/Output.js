@@ -51,3 +51,32 @@ const testing = () => {
 }
 testing() // undefined
 // why : because the function will take reference from its own scope first and the x variable is declared with var, so it is hoisted to the top of its scope.
+
+// 5
+let a = 100
+function App() {
+  console.log('1', a) // error - stops executing
+  let a = 42
+  console.log('2', a) // 42
+  {
+    let a = 100
+  }
+  console.log('3', a) // 42
+}
+App()
+// Why : because the first console log took the reference from the line below it, as it is said that let and const variable are hoisted but as they are in the temporal dead zone, we can't access it on the lines declared above their initilisation
+
+// 6
+let a2 = 100
+function App() {
+  a2 = 42
+  console.log('1', a2) // 42
+}
+App()
+console.log(a2) // 42
+// Why : because even the the function execution can re-declare the let variable.
+
+// 7
+const array = [1, 2, 3, 4]
+array = array.push(55) // error
+// why : because array.push method returns the new length of the array. and we are assigning a new value to the contstant variable
