@@ -1,0 +1,1 @@
+Implement a function in JavaScript that takes a list of async functions as input and a callback function and executes the async tasks in parallel that is all at once and invokes the callback after all or each task is executed.
